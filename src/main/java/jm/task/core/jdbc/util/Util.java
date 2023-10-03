@@ -18,7 +18,9 @@ public class Util {
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "Idiot_24";
 
-    public Connection getConnection() {
+    private static SessionFactory sessionFactory;
+
+    public static Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName(DB_DRIVER);
@@ -31,7 +33,7 @@ public class Util {
         }
         return connection;
     }
-private static SessionFactory sessionFactory;
+
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {

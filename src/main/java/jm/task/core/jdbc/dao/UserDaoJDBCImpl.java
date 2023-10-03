@@ -7,12 +7,12 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDaoJDBCImpl extends Util implements UserDao {
+public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl() {
 
     }
 
-    Connection conn = getConnection();
+    Connection conn = Util.getConnection();
 
     public void createUsersTable() {
         try (Statement statement = conn.createStatement()) {

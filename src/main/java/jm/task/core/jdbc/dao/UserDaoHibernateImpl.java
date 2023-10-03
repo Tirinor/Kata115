@@ -10,11 +10,10 @@ import javax.persistence.Query;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
+    private static final SessionFactory sessionFactory = Util.getSessionFactory();
     public UserDaoHibernateImpl() {
 
     }
-
-    private static final SessionFactory sessionFactory = Util.getSessionFactory();
 
 
     @Override
